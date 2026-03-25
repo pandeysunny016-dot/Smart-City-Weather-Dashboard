@@ -67,15 +67,15 @@ If denied → user can manually search for a city
 4.Easy-to-read weather data and icons
 
 📂 Project Structure
-smart-weather-dashboard/
-│
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   ├── icons/
-│   └── images/
-└── README.md
+smart-weather-dashboard--->
+
+1.index.html
+2.style.css
+3.script.js
+.assets
+   .icons
+   .images
+.README.md
 
 🧩 Future Improvements-->
 
