@@ -54,6 +54,7 @@ Sign up at OpenWeatherMap
 Generate your API key
 Replace it in your JavaScript file:
 const API_KEY = "your_api_key_here";
+const API_KEY = "4bffe2485aa35ed37368f5d6949a7c7a";
 
 📍 Geolocation Feature
 On first visit, the browser will ask for location permission
