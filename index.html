@@ -3,183 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartCity Weather Dashboard</title>
- 
+  <title>CYBER-SKY | Smart City Weather Intelligence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
-  </head>
+</head>
 <body>
   <div class="sky-bg" id="skyBg"></div>
-  <div class="clouds">
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
-    <div class="cloud cloud-4"></div>
-  </div>
-  <div class="sunbeam" id="sunbeam"></div>
- 
+  
   <div class="container">
- 
-   
     <header class="top-bar">
       <div class="brand">
-        <div class="brand-logo">⛅</div>
+        <div class="brand-logo">🌌</div>
         <div>
-          <div class="brand-title">SmartCity Weather</div>
-          <div class="brand-tagline">Real-time forecast &amp; smart advice</div>
+          <div class="brand-title">CYBER-SKY</div>
+          <div class="brand-tagline">SMART CITY INTELLIGENCE UNIT</div>
         </div>
+      </div>
+      <div class="smart-alert-bar" id="smartAlert">
+        <span class="pulse-dot"></span>
+        <span class="alert-text">Systems Checklist: Optimal</span>
       </div>
       <div class="live-clock">
         <div class="clock-time" id="clockTime">--:--:--</div>
         <div class="clock-date" id="clockDate">--- -- ----</div>
       </div>
     </header>
- 
-    
+
     <div class="search-area">
-      <span style="font-size: 1rem; opacity: 0.5;">🔍</span>
-      <input
-        type="text"
-        id="cityInput"
-        placeholder="Search for a city… e.g. Mumbai, London, Tokyo"
-        autocomplete="off"
-      />
-      <button class="location-btn" id="geoBtn" title="Use my location">📍</button>
-      <button class="search-btn"   id="searchBtn">Search →</button>
+      <input type="text" id="cityInput" placeholder="Locate Neural Signal... (Enter City Name)" autocomplete="off" />
+      <button class="location-btn" id="geoBtn" title="Detect My Coordinates">📍</button>
+      <button class="search-btn" id="searchBtn">SCAN AREA</button>
     </div>
- 
-    
+
     <div class="err-msg hidden" id="errorBox">
-      <span>⚠️</span>
-      <span id="errorText"></span>
+      <span>⚠️ ERROR:</span> <span id="errorText"></span>
     </div>
- 
-    
+
     <div class="loading-screen hidden" id="loadingBox">
       <div class="spinner"></div>
-      <p>Fetching weather data…</p>
+      <p>Deciphering Satellite Feed...</p>
     </div>
- 
+
     <div id="weatherData" class="hidden">
- 
       <div class="weather-grid">
- 
-        
         <div class="weather-card">
           <div class="city-country">
-            <span>📍</span>
-            <span id="countryCode">--</span>
+            NODE: <span id="cityName">--</span>, <span id="countryCode">--</span>
           </div>
-          <div class="city-name" id="cityName">--</div>
           <div class="weather-badge">
             <span id="condIcon">🌤</span>
-            <span id="condLabel">--</span>
+            <span id="condLabel">ANALYZING...</span>
           </div>
           <div class="temp-row">
             <div class="big-temp" id="tempNow">--</div>
             <div class="deg-symbol">°C</div>
             <div class="weather-img">
-              <img id="weatherIcon" src="" alt="weather icon" />
+              <img id="weatherIcon" src="" alt="" />
             </div>
           </div>
           <div class="mini-stats">
             <div class="mini-box">
-              <div class="mini-label">Feels Like</div>
+              <div class="mini-label">Sensation</div>
               <div class="mini-value" id="feelsLike">--</div>
             </div>
             <div class="mini-box">
-              <div class="mini-label">Humidity</div>
+              <div class="mini-label">Maturity</div>
               <div class="mini-value" id="humidity">--</div>
             </div>
             <div class="mini-box">
-              <div class="mini-label">Wind</div>
+              <div class="mini-label">Velocity</div>
               <div class="mini-value" id="windSpeed">--</div>
             </div>
             <div class="mini-box">
-              <div class="mini-label">Pressure</div>
+              <div class="mini-label">Atmos</div>
               <div class="mini-value" id="pressure">--</div>
             </div>
           </div>
         </div>
- 
-        
+
         <div class="side-col">
- 
           <div class="sun-info-card">
-            <div class="small-heading">☀️ Sun Schedule</div>
+            <div class="small-heading">SOLAR CYCLE</div>
             <div class="sun-times-row">
               <div class="sun-item">
                 <div class="sun-icon">🌅</div>
-                <div class="sun-label">Sunrise</div>
-                <div class="sun-value" id="sunriseTime">--</div>
+                <div class="sun-label">Dawn</div>
+                <div class="sun-value" id="sunriseTime">--:--</div>
               </div>
-              <div class="sun-divider"></div>
               <div class="sun-item">
                 <div class="sun-icon">🌇</div>
-                <div class="sun-label">Sunset</div>
-                <div class="sun-value" id="sunsetTime">--</div>
-              </div>
-              <div class="sun-divider"></div>
-              <div class="sun-item">
-                <div class="sun-icon">👁️</div>
-                <div class="sun-label">Visibility</div>
-                <div class="sun-value" id="visibilityVal">--</div>
+                <div class="sun-label">Dusk</div>
+                <div class="sun-value" id="sunsetTime">--:--</div>
               </div>
             </div>
           </div>
- 
+
           <div class="outfit-card">
-            <div class="outfit-title">👔 What To Wear Today</div>
+            <div class="outfit-title">GEAR RECOMMENDATIONS</div>
             <div class="outfit-tips" id="outfitTips"></div>
           </div>
- 
         </div>
       </div>
- 
-      
+
       <div class="forecast-section">
-        <div class="section-title">5-Day Forecast</div>
+        <div class="section-title">CHRONO-FORECAST (5 DAYS)</div>
         <div class="forecast-row" id="forecastRow"></div>
       </div>
- 
-     
-      <div class="info-boxes">
-        <div class="info-box">
-          <div class="box-icon">🌡️</div>
-          <div class="box-label">Min / Max</div>
-          <div class="box-value" id="minMaxTemp">--</div>
-          <div class="box-sub">Today's range</div>
-        </div>
-        <div class="info-box">
-          <div class="box-icon">🌬️</div>
-          <div class="box-label">Wind Gust</div>
-          <div class="box-value" id="windGust">--</div>
-          <div class="box-sub">km/h max gust</div>
-        </div>
-        <div class="info-box">
-          <div class="box-icon">🌫️</div>
-          <div class="box-label">Cloud Cover</div>
-          <div class="box-value" id="cloudCover">--</div>
-          <div class="box-sub">Sky coverage</div>
-        </div>
-        <div class="info-box">
-          <div class="box-icon">🌐</div>
-          <div class="box-label">Local Time</div>
-          <div class="box-value" id="localTime">--</div>
-          <div class="box-sub">At this location</div>
-        </div>
-      </div>
- 
     </div>
+
     <div class="welcome-screen" id="welcomeScreen">
       <div class="globe-icon">🌍</div>
-      <h3>Your Sky, Beautifully Presented</h3>
-      <p>Search any city or tap 📍 to load your local weather instantly.</p>
+      <h3>Welcome to the Future of Weather</h3>
+      <p>Initiate scan by searching a city or using your precise coordinates.</p>
     </div>
- 
   </div>
-  <script src="script.js"></script>
- </body>
-</html>
 
+  <script src="script.js"></script>
+</body>
+</html>
