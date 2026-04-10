@@ -233,9 +233,3 @@ Contributions are welcome!
 6. Submit a Pull Request
 
 ---
-
-## 👨‍💻 Author
-
-**Sunny Pandey**  
-SmartCity Weather Dashboard — College Project  
-Built with HTML, CSS & JavaScript
